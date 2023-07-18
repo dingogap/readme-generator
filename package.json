@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dingogap/readme-generator/issues"
   },
-  "homepage": "https://github.com/dingogap/readme-generator#readme"
+  "homepage": "https://github.com/dingogap/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
