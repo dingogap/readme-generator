@@ -7,3 +7,4 @@
 5. Added output folder to hold the generated README.md file
 6. Added assets folder containing video and images folders for documentation
 7. Installed inquirer 8.2.4
+8. Included packages required for this project - inquirer, fs & generateMarkdown
