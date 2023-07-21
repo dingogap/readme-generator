@@ -10,25 +10,41 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
+function buildTOC(section){}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log(data.title)
-
+  let docoTop = "";
+  let docTOC = "";
+  let docoBottom = "";
+  let sectionHeading = "";
   let sections = Object.keys(data);
   sections.forEach((section) => {
-    console.log(`${section} - ${data[section]}`);
-  })
-
-
-  let doco = `# ${data.title}
+    sectionHeading = section.charAt(0).toUpperCase() + section.substring(1);
+    switch (section) {
+      case "title":
+        docoTop += `# ${data[section]}
 
   `;
-
-  doco += `## Description
-  ${data.description}
+        buildTOC(sectionHeading);
+        break;
+      case "description":
+        docoTop += `## ${sectionHeading}
+  ${data[section]}
   
   `;
-  return doco
+        buildTOC(sectionHeading);
+        break;
+      default:
+        docoBottom += `## ${sectionHeading}
+        ${data[section]}
+        
+        `;
+        buildTOC(sectionHeading);
+    }
+  });
+
+  return docoTop + docTOC + docoBottom;
 }
 
 module.exports = generateMarkdown;
