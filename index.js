@@ -6,9 +6,28 @@ const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        type: "input",
-        message: "What is the Project Name?",
         name: "title",
+        type: "input",
+        message: "Project Title?",
+        validate: (answers) => {
+            if (answers.length === 0) {
+                return console.log('Please enter the Title of your Project');
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        name: "description",
+        type: "input",
+        message: "Brief Description?",
+        validate: (answers) => {
+            if (answers.length < 1) {
+                return console.log('Please enter a Description for your Project');
+            } else {
+                return true;
+            }
+        }
     },
 ];
 
