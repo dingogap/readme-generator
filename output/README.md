@@ -1,23 +1,24 @@
-# Project Title
+# Title
 
 ## Description
-Project Description
+Description
 
+## Table of Contents
 
-[TOC]
+  [TOC]
   
 ## Install
-Project Instructions
+Installation
 
 ## Usage
-Project Usege
+Usage
 
 ## Licence
-More Project Usage
+License
 
 ## Contributing
-Project Guidelines
+Contribution
 
 ## Tests
-Project Testing
+Tests
 

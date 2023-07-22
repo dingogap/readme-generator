@@ -10,13 +10,7 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
-function buildTOC() {
-  line = `
-[TOC]
-  
-`;
-  return line
-}
+
 
 // Add the formatted title to the README.md document 
 function addTitle(sectionDetail) {
@@ -37,7 +31,19 @@ ${sectionDetail}
   return line;
 }
 
+// Add a properly formatted Table of Contents
+function buildTOC() {
+  line = `## Table of Contents
+
+[TOC]
+  
+`;
+  return line
+}
+
 // Build a properly formatted README.md document using the data stored in the answers object
+// Title & Description are in the top of the README.md, above the Table of Contents
+// The remaining sections are in the bottom of the README.md, below the Table of Contents  
 function generateMarkdown(data) {
   let docoTop = "";
   let docTOC = "";
