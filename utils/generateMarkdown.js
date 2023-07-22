@@ -10,9 +10,28 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
-function buildTOC(section){}
+function buildTOC(section) { }
 
-// TODO: Create a function to generate markdown for README
+// Add the formatted title to the README.md document 
+function addTitle(sectionDetail) {
+  let line = '';
+  line = `# ${sectionDetail}
+
+`;
+  return line;
+}
+
+// Add a formatted Section to README.md document
+function addSection(sectionTitle, sectionDetail) {
+  let line = '';
+  line = `## ${sectionTitle}
+${sectionDetail}
+
+`;
+  return line;
+}
+
+// Build a properly formatted README.md document using the data stored in the answers object
 function generateMarkdown(data) {
   let docoTop = "";
   let docTOC = "";
@@ -23,23 +42,15 @@ function generateMarkdown(data) {
     sectionHeading = section.charAt(0).toUpperCase() + section.substring(1);
     switch (section) {
       case "title":
-        docoTop += `# ${data[section]}
-
-  `;
+        docoTop += addTitle(data[section])
         buildTOC(sectionHeading);
         break;
       case "description":
-        docoTop += `## ${sectionHeading}
-  ${data[section]}
-  
-  `;
+        docoTop += addSection(sectionHeading, data[section])
         buildTOC(sectionHeading);
         break;
       default:
-        docoBottom += `## ${sectionHeading}
-        ${data[section]}
-        
-        `;
+        docoBottom += docoTop += addSection(sectionHeading, data[section])
         buildTOC(sectionHeading);
     }
   });
