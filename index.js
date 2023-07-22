@@ -1,14 +1,14 @@
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
-const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        name: "title",
-        type: "input",
-        message: "Project Title?",
+        name: 'title',
+        type: 'input',
+        message: 'Project Title?',
         validate: (answers) => {
             if (answers.length === 0) {
                 return console.log('Please enter the Title of your Project');
@@ -18,9 +18,9 @@ const questions = [
         }
     },
     {
-        name: "description",
-        type: "input",
-        message: "Brief Description?",
+        name: 'description',
+        type: 'input',
+        message: 'Brief Description?',
         validate: (answers) => {
             if (answers.length < 1) {
                 return console.log('Please enter a Description for your Project');
@@ -30,9 +30,29 @@ const questions = [
         }
     },
     {
-        name: "usage",
-        type: "input",
-        message: "Instructions?",
+        name: 'install',
+        type: 'input',
+        message: 'Installation Instructions?',
+    },
+    {
+        name: 'usage',
+        type: 'input',
+        message: 'Usage Information',
+    },
+    {
+        name: 'licence',
+        type: 'input',
+        message: 'License Information?',
+    },
+    {
+        name: 'contributing',
+        type: 'input',
+        message: 'Contribution Guidelines?',
+    },
+    {
+        name: 'tests',
+        type: 'input',
+        message: 'Test Instructions?',
     },
 ];
 
@@ -54,7 +74,7 @@ function init() {
     inquirer.prompt(questions).then((answers) => {
         console.log(answers);
         const data = generateMarkdown(answers);
-        const fileName = "./output/README.md";
+        const fileName = './output/README.md';
         writeToFile(fileName, data);
     });
 }

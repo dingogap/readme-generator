@@ -12,5 +12,6 @@
 10. Added code to generate markdown for the questions and write the README.md file & tested - OK
 11. Updated markdown generator to iterate through questions rather than explicitly list them
 12. Moved code for Section Headings and Section Detail to functions to for readability & improved maintenance
-13. Updated markdown generator to ignore questions with no answers 
+13. Updated markdown generator to ignore questions with no answers
+14. Added additional quetsions to index.js
 

@@ -55,7 +55,7 @@ function generateMarkdown(data) {
           docoTop += addSection(sectionHeading, data[section])
           break;
         default:
-          docoBottom += docoBottom += addSection(sectionHeading, data[section])
+          docoBottom += addSection(sectionHeading, data[section])
       }
     }
   });
