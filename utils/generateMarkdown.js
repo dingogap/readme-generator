@@ -10,7 +10,13 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
-function buildTOC(section) { }
+function buildTOC() { 
+  line= `
+  [TOC]
+  
+  `;
+  return line
+}
 
 // Add the formatted title to the README.md document 
 function addTitle(sectionDetail) {
@@ -43,19 +49,16 @@ function generateMarkdown(data) {
     switch (section) {
       case "title":
         docoTop += addTitle(data[section])
-        buildTOC(sectionHeading);
         break;
       case "description":
         docoTop += addSection(sectionHeading, data[section])
-        buildTOC(sectionHeading);
         break;
       default:
         docoBottom += docoTop += addSection(sectionHeading, data[section])
-        buildTOC(sectionHeading);
     }
   });
 
-  return docoTop + docTOC + docoBottom;
+  return docoTop + buildTOC() + docoBottom;
 }
 
 module.exports = generateMarkdown;
