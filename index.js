@@ -29,6 +29,11 @@ const questions = [
             }
         }
     },
+    {
+        name: "usage",
+        type: "input",
+        message: "Instructions?",
+    },
 ];
 
 // Create file filename & write data to it

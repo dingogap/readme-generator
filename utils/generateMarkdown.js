@@ -10,11 +10,11 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
-function buildTOC() { 
-  line= `
-  [TOC]
+function buildTOC() {
+  line = `
+[TOC]
   
-  `;
+`;
   return line
 }
 
@@ -46,15 +46,17 @@ function generateMarkdown(data) {
   let sections = Object.keys(data);
   sections.forEach((section) => {
     sectionHeading = section.charAt(0).toUpperCase() + section.substring(1);
-    switch (section) {
-      case "title":
-        docoTop += addTitle(data[section])
-        break;
-      case "description":
-        docoTop += addSection(sectionHeading, data[section])
-        break;
-      default:
-        docoBottom += docoTop += addSection(sectionHeading, data[section])
+    if (data[section].length > 0) {
+      switch (section) {
+        case "title":
+          docoTop += addTitle(data[section])
+          break;
+        case "description":
+          docoTop += addSection(sectionHeading, data[section])
+          break;
+        default:
+          docoBottom += docoBottom += addSection(sectionHeading, data[section])
+      }
     }
   });
 
