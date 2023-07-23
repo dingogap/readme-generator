@@ -14,4 +14,5 @@
 12. Moved code for Section Headings and Section Detail to functions to for readability & improved maintenance
 13. Updated markdown generator to ignore questions with no answers
 14. Added additional quetsions to index.js
+15. Add code to autogenerate the Table of Contents
 

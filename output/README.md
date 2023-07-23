@@ -1,29 +1,18 @@
 # Title
 
 ## Description
-Description</br>Description
+Description
 
 ## Table of Contents
 * [Installation](#installation)
-* [Usage](#usage)
 * [Licence](#licence)
-* [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
-## Installation
-Instalation
 
-## Usage
-Usage
+## Installation
+Instructions
 
 ## Licence
-GNU GPLv3
-
-## Contributing
-Contributor
-
-## Tests
-Test
+Apache License 2.0
 
 ## Questions
 Q&A

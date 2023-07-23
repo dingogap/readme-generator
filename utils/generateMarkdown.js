@@ -1,14 +1,14 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) { }
+function renderLicenseBadge(license) {}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) { }
+function renderLicenseLink(license) {}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) {}
 
 // Add the formatted title to the README.md document
 function addTitle(sectionDetail) {
@@ -30,11 +30,8 @@ ${sectionDetail}
 }
 
 // Add a properly formatted Table of Contents
-function buildTOC() {
-  line = `## Table of Contents
-
-[TOC]
-  
+function addToToc(sectionTitle, target) {
+  line = `* [${sectionTitle}](#${target})
 `;
   return line;
 }
@@ -42,38 +39,38 @@ function buildTOC() {
 // Build a properly formatted README.md document using the data stored in the answers object
 // Title & Description are in the top of the README.md, above the Table of Contents
 // The remaining sections are in the bottom of the README.md, below the Table of Contents
+// This function will work unchanged if sections are added or deleted provided custoom formatting is not required
+// Only adds sections where data has been supplied
 function generateMarkdown(data) {
-  let docoTop = "";
-  let docoBottom = "";
-  let docoTOC = `## Table of Contents
+  let readmeTop = "";
+  let readmeBottom = "";
+  let readmeToc = `## Table of Contents
 `;
   let sectionHeading = "";
   let sections = Object.keys(data);
   sections.forEach((section) => {
     sectionHeading = section.charAt(0).toUpperCase() + section.substring(1);
-    if (section !== "title" && section !== "description") {
-      docoTOC += `* [${sectionHeading}](#${section})
-`;
-    }
     if (data[section].length > 0) {
       switch (section) {
         case "title":
-          docoTop += addTitle(data[section]);
+          readmeTop += addTitle(data[section]);
           break;
         case "description":
-          docoTop += addSection(sectionHeading, data[section]);
+          readmeTop += addSection(sectionHeading, data[section]);
           break;
         case "license":
-          docoBottom += addSection(sectionHeading, data[section]);
+          readmeBottom += addSection(sectionHeading, data[section]);
+          readmeToc += addToToc(sectionHeading, section);
           break;
         default:
-          docoBottom += addSection(sectionHeading, data[section]);
+          readmeBottom += addSection(sectionHeading, data[section]);
+          readmeToc += addToToc(sectionHeading, section);
       }
     }
   });
-  docoTOC += `
-  `;
-  return docoTop + docoTOC + docoBottom;
+  readmeToc += `
+`;
+  return readmeTop + readmeToc + readmeBottom;
 }
 
 module.exports = generateMarkdown;
