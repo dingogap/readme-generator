@@ -15,4 +15,5 @@
 13. Updated markdown generator to ignore questions with no answers
 14. Added additional quetsions to index.js
 15. Add code to autogenerate the Table of Contents
+16. Moved license details to object
 
