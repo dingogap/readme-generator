@@ -10,11 +10,9 @@ function renderLicenseLink(license) { }
 // If there is no license, return an empty string
 function renderLicenseSection(license) { }
 
-
-
-// Add the formatted title to the README.md document 
+// Add the formatted title to the README.md document
 function addTitle(sectionDetail) {
-  let line = '';
+  let line = "";
   line = `# ${sectionDetail}
 
 `;
@@ -23,7 +21,7 @@ function addTitle(sectionDetail) {
 
 // Add a formatted Section to README.md document
 function addSection(sectionTitle, sectionDetail) {
-  let line = '';
+  let line = "";
   line = `## ${sectionTitle}
 ${sectionDetail}
 
@@ -38,35 +36,44 @@ function buildTOC() {
 [TOC]
   
 `;
-  return line
+  return line;
 }
 
 // Build a properly formatted README.md document using the data stored in the answers object
 // Title & Description are in the top of the README.md, above the Table of Contents
-// The remaining sections are in the bottom of the README.md, below the Table of Contents  
+// The remaining sections are in the bottom of the README.md, below the Table of Contents
 function generateMarkdown(data) {
   let docoTop = "";
-  let docTOC = "";
   let docoBottom = "";
+  let docoTOC = `## Table of Contents
+`;
   let sectionHeading = "";
   let sections = Object.keys(data);
   sections.forEach((section) => {
     sectionHeading = section.charAt(0).toUpperCase() + section.substring(1);
+    if (section !== "title" && section !== "description") {
+      docoTOC += `* [${sectionHeading}](#${section})
+`;
+    }
     if (data[section].length > 0) {
       switch (section) {
         case "title":
-          docoTop += addTitle(data[section])
+          docoTop += addTitle(data[section]);
           break;
         case "description":
-          docoTop += addSection(sectionHeading, data[section])
+          docoTop += addSection(sectionHeading, data[section]);
+          break;
+        case "license":
+          docoBottom += addSection(sectionHeading, data[section]);
           break;
         default:
-          docoBottom += addSection(sectionHeading, data[section])
+          docoBottom += addSection(sectionHeading, data[section]);
       }
     }
   });
-
-  return docoTop + buildTOC() + docoBottom;
+  docoTOC += `
+  `;
+  return docoTop + docoTOC + docoBottom;
 }
 
 module.exports = generateMarkdown;

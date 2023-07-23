@@ -30,7 +30,7 @@ const questions = [
         }
     },
     {
-        name: 'install',
+        name: 'installation',
         type: 'input',
         message: 'Installation Instructions?',
     },
@@ -41,7 +41,8 @@ const questions = [
     },
     {
         name: 'licence',
-        type: 'input',
+        type: 'list',
+        choices: ['Apache License 2.0', 'GNU GPLv3', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "Revised" License', 'Boost Software License 1.0', 'Ceative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU GPLv2', 'GNU Leeser GPL v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
         message: 'License Information?',
     },
     {
@@ -53,6 +54,11 @@ const questions = [
         name: 'tests',
         type: 'input',
         message: 'Test Instructions?',
+    },
+    {
+        name: 'questions',
+        type: 'input',
+        message: 'How to ask Questions and get more information',
     },
 ];
 
@@ -71,12 +77,15 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((answers) => {
-        console.log(answers);
-        const data = generateMarkdown(answers);
-        const fileName = './output/README.md';
-        writeToFile(fileName, data);
-    });
+    inquirer.prompt(questions)
+        .then(answers => {
+            return generateMarkdown(answers);
+        })
+        .then(data => {
+            const fileName = './output/README.md';
+            writeToFile(fileName, data);
+        })
+
 }
 
 // Function call to initialize app
