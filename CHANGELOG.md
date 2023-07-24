@@ -17,5 +17,6 @@
 15. Add code to autogenerate the Table of Contents
 16. Moved license details to object
 17. Moved object t separate js file, exported & required by index.js & generateMarkdown.js
+18. Adjusted markdown section heading postions
 
 

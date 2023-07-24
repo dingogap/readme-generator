@@ -5,62 +5,57 @@ function licenseDetails(wanted) {
         Apache_2: {
             name: 'Apache 2.0',
             badge: 'https://img.shields.io/badge/License-Apache_2.0-blue.svg',
-            license: 'https://opensource.org/licenses/Apache-2.0'
+            link: 'https://opensource.org/licenses/Apache-2.0'
         },
         GPLv2: {
             name: 'GNU GPLv2',
             badge: 'https://img.shields.io/badge/License-GPL_v2-blue.svg)',
-            license: 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html'
+            link: 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html'
         },
         GPLv3: {
             name: 'GNU GPLv3',
             badge: 'https://img.shields.io/badge/License-GPLv3-blue.svg',
-            license: 'https://www.gnu.org/licenses/gpl-3.0'
+            link: 'https://www.gnu.org/licenses/gpl-3.0'
         },
         MIT: {
             name: 'MIT License',
             badge: 'https://img.shields.io/badge/License-MIT-yellow.svg',
-            license: 'https://opensource.org/licenses/MIT'
+            link: 'https://opensource.org/licenses/MIT'
         },
         BSD2: {
             name: 'BSD 2-Clause License',
             badge: 'https://img.shields.io/badge/License-BSD_2--Clause-orange.svg',
-            license: 'https://opensource.org/licenses/BSD-2-Clause'
+            link: 'https://opensource.org/licenses/BSD-2-Clause'
         },
         BSD3: {
             name: 'BSD 3-Clause License',
             badge: 'https://img.shields.io/badge/License-BSD_3--Clause-orange.svg',
-            license: 'https://opensource.org/licenses/BSD-3-Clause'
+            link: 'https://opensource.org/licenses/BSD-3-Clause'
         },
         Boost_1: {
             name: 'Boost Software License 1.0',
             badge: 'https://img.shields.io/badge/License-Boost_1.0-lightblue.svg',
-            license: 'https://www.boost.org/LICENSE_1_0.txt'
+            link: 'https://www.boost.org/LICENSE_1_0.txt'
         },
         CC0_1: {
             name: 'Creative Commons 1.0',
             badge: 'https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg',
-            license: 'http://creativecommons.org/publicdomain/zero/1.0/'
+            link: 'http://creativecommons.org/publicdomain/zero/1.0/'
         },
         EPL_1: {
             name: 'Eclipse Public License 1.0',
             badge: 'https://img.shields.io/badge/License-EPL_1.0-red.svg',
-            license: 'https://opensource.org/licenses/EPL-1.0'
+            link: 'https://opensource.org/licenses/EPL-1.0'
         },
         MPL_2: {
             name: 'Mozilla Public License 2.0',
             badge: 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg',
-            license: 'https://opensource.org/licenses/MPL-2.0'
-        },
-        Unlicense: {
-            name: 'The Unlicense',
-            badge: 'https://img.shields.io/badge/license-Unlicense-blue.svg',
-            license: 'http://unlicense.org/'
+            link: 'https://opensource.org/licenses/MPL-2.0'
         },
         NotLicensed: {
             name: 'No License Required',
             badge: '',
-            license: ''
+            link: ''
         }
     }
     if (wanted === undefined) {

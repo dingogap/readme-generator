@@ -5,14 +5,25 @@ function renderLicenseBadge(license) {
   if (license === "NotLicensed") {
     return "";
   } else {
-    return `![License Badge](${licenseDetails()[license].badge})
+    let line = `[![License Badge](${licenseDetails()[license].badge})]`;
+    line += renderLicenseLink(license);
+    line += `
+
 `;
+    return line
   }
+
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) { }
+function renderLicenseLink(license) {
+  if (license === "NotLicensed") {
+    return "";
+  } else {
+    return `(${licenseDetails()[license].link})`;
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -60,6 +71,7 @@ function generateMarkdown(data) {
 function addTitle(sectionDetail) {
   let line = "";
   line = `# ${sectionDetail}
+
 `;
   return line;
 }
