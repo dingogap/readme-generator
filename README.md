@@ -1,29 +1,13 @@
-# Title
+# README Generator
+
+[![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Description</br>Description
+This README produces a standardised and repeatable method of creating a quality README.md file. It is a CLI application devewloped using node.js. The Application uses Inquirer to ask a series of questions and uses the answers to build the README.md file.
 
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Licence](#licence)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
-## Installation
-Instalation
+## Video Demonstrating working application
+Click the link to view the [Demonstration Video][def1]
 
-## Usage
-Usage
+[def1]: https://github.com/dingogap/readme-generator/blob/main/assets/video/readMeDemo.mp4
 
-## Licence
-GNU GPLv3
-
-## Contributing
-Contributor
-
-## Tests
-Test
-
-## Questions
-Q&A
+![Demonstration Video](assets/video/readMeDemo.gif)
