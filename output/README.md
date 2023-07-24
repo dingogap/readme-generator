@@ -1,9 +1,9 @@
-# The README Generator
+# 1
 
-[![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License Badge](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 ## Description
-A very brief description
+2
 
 ## Table of Contents
 * [Installation](#installation)
@@ -14,21 +14,20 @@ A very brief description
 * [Questions](#questions)
 
 ## Installation
-Instructions for installing
+3
 
 ## Usage
-Use it HOW?
+4
 
 ## License
-  
-  The README Generator is available under the MIT License license. See the [LICENSE](https://opensource.org/licenses/MIT) file for more info.
+1 is available under the BSD 2-Clause License license. See the [LICENSE](https://opensource.org/licenses/BSD-2-Clause) file for more info.
 
 ## Contributing
-Contributor
+4
 
 ## Tests
-Testor
+23
 
-## Questions
-Q&A
-
+If you have questions about this project or would like more information you can [contact me by email](mailto:peter.medbury@dingogap.net.au).
+  
+  You can see more of my work in my [Github Repository](https://github.com/dingogap).

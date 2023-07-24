@@ -19,5 +19,7 @@
 17. Moved object t separate js file, exported & required by index.js & generateMarkdown.js
 18. Adjusted markdown section heading postions
 19. Added License Section to README.md
+20. Added Questions section with links to github and email contact info
+
 
 

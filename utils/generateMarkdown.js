@@ -29,8 +29,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(title, license) {
   line = `## License
-  
-  `;
+`;
   line += `${title} is available under the ${licenseDetails()[license].name} license. See the [LICENSE](${licenseDetails()[license].link}) file for more info.
 
 `;
@@ -43,8 +42,10 @@ function renderLicenseSection(title, license) {
 // This function will work unchanged if sections are added or deleted provided custoom formatting is not required
 // Only adds sections where data has been supplied
 function generateMarkdown(data) {
+  var questionCount = 0
   let readmeTop = "";
   let readmeBottom = "";
+  let readmeQuestions = "";
   let readmeToc = `## Table of Contents
 `;
   let sectionHeading = "";
@@ -64,15 +65,21 @@ function generateMarkdown(data) {
           readmeBottom += renderLicenseSection(data.title, data[section]);
           readmeToc += addToToc(sectionHeading, section);
           break;
+        case "userName":
+        case "email":
+          break;
         default:
           readmeBottom += addSection(sectionHeading, data[section]);
           readmeToc += addToToc(sectionHeading, section);
+
       }
     }
   });
+  readmeQuestions = addQuestions(data.userName, data.email);
+  readmeToc += addToToc("Questions", "questions");
   readmeToc += `
 `;
-  return readmeTop + readmeToc + readmeBottom;
+  return readmeTop + readmeToc + readmeBottom + readmeQuestions;
 }
 
 // Add the formatted title to the README.md document
@@ -91,6 +98,15 @@ function addSection(sectionTitle, sectionDetail) {
 ${sectionDetail}
 
 `;
+  return line;
+}
+
+// Add a formatted Section to README.md document
+function addQuestions(userName, email) {
+  let line = `If you have questions about this project or would like more information you can [contact me by email](mailto:${email}).
+  
+  You can see more of my work in my [Github Repository](https://github.com/${userName}).
+`
   return line;
 }
 

@@ -3,6 +3,7 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const licenseDetails = require("./utils/licenseDetails");
 
+
 // Build an array of available licenses for the Inquirer Questions
 licenseList=Object.keys(licenseDetails())
 
@@ -11,10 +12,10 @@ const questions = [
     {
         name: "title",
         type: "input",
-        message: "Project Title?",
+        message: "Enter the Title of your Project:",
         validate: (answers) => {
             if (answers.length === 0) {
-                return console.log("Please enter the Title of your Project");
+                return console.log("Please enter the Title of your Project:");
             } else {
                 return true;
             }
@@ -23,10 +24,10 @@ const questions = [
     {
         name: "description",
         type: "input",
-        message: "Brief Description?",
+        message: "Give a Description of your Project:?",
         validate: (answers) => {
-            if (answers.length < 1) {
-                return console.log("Please enter a Description for your Project");
+            if (answers.length ===0) {
+                return console.log("Please give a Description for your Project:");
             } else {
                 return true;
             }
@@ -35,37 +36,54 @@ const questions = [
     {
         name: "installation",
         type: "input",
-        message: "Installation Instructions?",
+        message: "Enter any Installation Instructions:",
     },
     {
         name: "usage",
         type: "input",
-        message: "Usage Information",
+        message: "Please enter information and instruction showing how to use this Project:",
     },
     {
         name: "license",
         type: "list",
         choices: licenseList,
-        message: "License Information?",
+        message: "Choose a License from the Lience List - if unlicensed choose 'No License Required':",
     },
     {
         name: "contributing",
         type: "input",
-        message: "Contribution Guidelines?",
+        message: "Enter information advising how to contribute to this Project:",
     },
     {
         name: "tests",
         type: "input",
-        message: "Test Instructions?",
+        message: "Enter details of any Test Procedures to confirm Project functionality:",
     },
     {
-        name: "questions",
+        name: "userName",
         type: "input",
-        message: "How to ask Questions and get more information",
+        message: "Please enter your GitHub UserName:",
+        validate: (answers) => {
+            if (answers.length === 0) {
+                return console.log("Please enter your GitHub UserName:");
+            } else {
+                return true;
+            }
+        },
+    },
+    {
+        name: "email",
+        type: "input",
+        message: "Please enter your email address:",
+        validate: (answers) => {
+            if (answers.length === 0) {
+                return console.log("Please enter your email address:");
+            } else {
+                return true;
+            }
+        },
     },
 ];
-
-
 
 // Create file filename & write data to it
 // Log errors to console
