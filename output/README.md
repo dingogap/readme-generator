@@ -1,19 +1,31 @@
-# Title
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# 1
+![License Badge](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)
 ## Description
-Description
+2
 
 ## Table of Contents
 * [Installation](#installation)
-* [Licence](#licence)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
 * [Questions](#questions)
 
 ## Installation
-Instructions
+3
 
-## Licence
-Apache License 2.0
+## Usage
+4
+
+## License
+BSD2
+
+## Contributing
+6
+
+## Tests
+7
 
 ## Questions
-Q&A
+8
 
