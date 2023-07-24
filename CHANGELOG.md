@@ -20,6 +20,10 @@
 18. Adjusted markdown section heading postions
 19. Added License Section to README.md
 20. Added Questions section with links to github and email contact info
+21. Tested README.md Generator - OK
+22. Created video showing working application & created a gif
+23. Checked the generated README.md
+
 
 
 

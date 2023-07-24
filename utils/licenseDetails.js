@@ -9,7 +9,7 @@ function licenseDetails(wanted) {
         },
         GPLv2: {
             name: 'GNU GPLv2',
-            badge: 'https://img.shields.io/badge/License-GPL_v2-blue.svg)',
+            badge: 'https://img.shields.io/badge/License-GPL_v2-blue.svg',
             link: 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html'
         },
         GPLv3: {
