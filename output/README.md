@@ -1,9 +1,9 @@
-# REAME Generator
+# README Generator
 
 [![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-This RAEDMEt produces a standardised and repeatable method of creating a quality README.md file.
+This project produces a standardised and repeatable method of creating a quality README.md file.
 
 ## Table of Contents
 * [Installation](#installation)
