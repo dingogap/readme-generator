@@ -103,9 +103,12 @@ ${sectionDetail}
 
 // Add a formatted Section to README.md document
 function addQuestions(userName, email) {
-  let line = `If you have questions about this project or would like more information you can [contact me by email](mailto:${email}).
+  let line = `## Questions
   
-  You can see more of my work in my [Github Repository](https://github.com/${userName}).
+If you have questions about this project or would like more information you can [contact me by email](mailto:${email}).
+  
+You can see more of my work in my [Github Repository](https://github.com/${userName}).
+
 `
   return line;
 }
