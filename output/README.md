@@ -1,7 +1,9 @@
-# Title
+# The README Generator
+
+[![License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Description
+A very brief description
 
 ## Table of Contents
 * [Installation](#installation)
@@ -12,20 +14,21 @@ Description
 * [Questions](#questions)
 
 ## Installation
-1
+Instructions for installing
 
 ## Usage
-2
+Use it HOW?
 
 ## License
-NotLicensed
+  
+  The README Generator is available under the MIT License license. See the [LICENSE](https://opensource.org/licenses/MIT) file for more info.
 
 ## Contributing
-e
+Contributor
 
 ## Tests
-e
+Testor
 
 ## Questions
-e
+Q&A
 

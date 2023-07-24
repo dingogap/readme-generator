@@ -1,3 +1,4 @@
+// Include code to create the license object
 const licenseDetails = require("./licenseDetails");
 
 // Render a License Badge is a License has been selected
@@ -10,9 +11,8 @@ function renderLicenseBadge(license) {
     line += `
 
 `;
-    return line
+    return line;
   }
-
 }
 
 // TODO: Create a function that returns the license link
@@ -27,7 +27,15 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(title, license) {
+  line = `## License
+  
+  `;
+  line += `${title} is available under the ${licenseDetails()[license].name} license. See the [LICENSE](${licenseDetails()[license].link}) file for more info.
+
+`;
+  return line;
+}
 
 // Build a properly formatted README.md document using the data stored in the answers object
 // Title & Description are in the top of the README.md, above the Table of Contents
@@ -53,7 +61,7 @@ function generateMarkdown(data) {
           readmeTop += addSection(sectionHeading, data[section]);
           break;
         case "license":
-          readmeBottom += addSection(sectionHeading, data[section]);
+          readmeBottom += renderLicenseSection(data.title, data[section]);
           readmeToc += addToToc(sectionHeading, section);
           break;
         default:

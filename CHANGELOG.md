@@ -18,5 +18,6 @@
 16. Moved license details to object
 17. Moved object t separate js file, exported & required by index.js & generateMarkdown.js
 18. Adjusted markdown section heading postions
+19. Added License Section to README.md
 
 
